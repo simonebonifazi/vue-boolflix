@@ -1,7 +1,8 @@
 <template>
   <div >
-  <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="fetchMovies"/>
-  <section id="movies">
+  <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="fetchData"/>
+<!-- film section -->
+ <section id="movies">
     <h3>Films</h3>
     <ul v-for="movie in movies" :key="movie.id">
     <li>
@@ -9,6 +10,18 @@
       {{movie.original_title}}
       {{movie.original_language}}
       {{movie.vote_avarege}}
+    </li>
+    </ul>
+  </section>
+    <!-- series section -->
+  <section id="series">
+    <h3>Series</h3>
+    <ul v-for="serie in series" :key="serie.id">
+    <li>
+      {{serie.title}}
+      {{serie.original_title}}
+      {{serie.original_language}}
+      {{serie.vote_avarege}}
     </li>
     </ul>
   </section>
@@ -27,6 +40,7 @@ export default {
 data(){
   return{
     movies: [],
+    series: [],
     api: {
       language: "it-IT",
       key: "963061c4be5e09116f528b4d6f430660",
@@ -51,6 +65,10 @@ methods:{
     axios.get(`${baseUri}/search/movie`, config)
     .then((res)=>{
       this.movies = res.data.results;
+    })
+    axios.get(`${baseUri}/search/tv`, config)
+    .then((res)=>{
+      this.series = res.data.results;
     })
   }
 }
