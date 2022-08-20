@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <input type="text" :placeholder="placeholder" v-model.trim="term">
-    <button type="button" @click="$emit('search', term)"> 
-    </button>
-  </div>
+    <div>
+        <input type="text" :placeholder="placeholder" v-model.trim="term">
+        <button type="button" @click="$emit('search', term)">
+        </button>
+    </div>
 </template>
 
 <script>
