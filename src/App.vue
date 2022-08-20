@@ -1,6 +1,17 @@
 <template>
   <div >
   <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="fetchMovies"/>
+  <section id="movies">
+    <h3>Films</h3>
+    <ul v-for="movie in movies" :key="movie.id">
+    <li>
+      {{movie.title}}
+      {{movie.original_title}}
+      {{movie.original_language}}
+      {{movie.vote_avarege}}
+    </li>
+    </ul>
+  </section>
   </div>
 </template>
 
