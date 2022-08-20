@@ -40,7 +40,15 @@ methods:{
 
     const {language, key, baseUri} = this.api;
 
-    axios.get(`${baseUri}/search/movie?api_key=${key}&query=${query}&language=${language}`)
+    const config = {
+      params: {
+        api_key: key,
+        language,
+        query
+      }
+    };
+
+    axios.get(`${baseUri}/search/movie`, config)
     .then((res)=>{
       this.movies = res.data.results;
     })
