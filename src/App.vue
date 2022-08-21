@@ -1,15 +1,22 @@
 <template>
   <div >
-  <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="fetchData"/>
+  <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="startSearch"/>
+
 <!-- film section -->
  <section id="movies">
     <h3>Films</h3>
     <ul v-for="movie in movies" :key="movie.id">
     <li>
       {{movie.title}}
+    </li>
+    <li>
       {{movie.original_title}}
+    </li>
+    <li>
       {{movie.original_language}}
-      {{movie.vote_avarege}}
+      </li>
+    <li>
+      {{movie.vote_avarage}}
     </li>
     </ul>
   </section>
@@ -18,11 +25,21 @@
     <h3>Series</h3>
     <ul v-for="serie in series" :key="serie.id">
     <li>
-      {{serie.title}}
-      {{serie.original_title}}
-      {{serie.original_language}}
-      {{serie.vote_avarege}}
+      {{serie.name}}
     </li>
+    <li>
+
+      {{serie.original_name}}
+    </li>
+    <li>
+
+      {{serie.original_language}}
+    </li>
+    <li>
+
+      {{serie.vote_avarage}}
+    </li>
+    
     </ul>
   </section>
   </div>
@@ -49,28 +66,38 @@ data(){
   }
 },
 methods:{
-  fetchMovies(query){
+  startSearch(query){
+
+//check the query
+    if(!query){
+      this.movies= this.series= [];
+      return
+    }
+    
+
     //api's calls
 
-    const {language, key, baseUri} = this.api;
+    const {language, key} = this.api;
 
     const config = {
       params: {
         api_key: key,
         language,
-        query
-      }
+        query,
+      },
     };
 
-    axios.get(`${baseUri}/search/movie`, config)
-    .then((res)=>{
-      this.movies = res.data.results;
-    })
-    axios.get(`${baseUri}/search/tv`, config)
-    .then((res)=>{
-      this.series = res.data.results;
-    })
-  }
+    this.fetchData('/search/movie', config, 'movies');
+    this.fetchData('/search/tv', config, 'series');
+
+  },
+  fetchData(endpoint, config, target){
+    axios.get(`${this.api.baseUri}${endpoint}`, config)
+      .then((res) => {
+        this[target] = res.data.results;
+      });
+
+  },
 }
   
 }
