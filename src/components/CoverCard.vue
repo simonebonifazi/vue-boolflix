@@ -7,7 +7,7 @@
             {{ production.original_title || production.original_name }}
         </li>
         <li>
-            <img v-if="hasFlag" :src="flagSource" :alt="production.original_language">
+            <img v-if="hasFlag" :src="`${UriImg}${production.poster_path}`" :alt="production.original_language">
             <span v-else>
                 {{ production.original_language }}
             </span>
@@ -24,6 +24,11 @@ export default {
     name: 'CoverCard',
     props:{
         production: Object,
+    },
+    data(){
+        return{
+            UriImg: "https://image.tmdb.org/t/p/w342"
+        };
     },
     computed:{
         hasFlag(){
