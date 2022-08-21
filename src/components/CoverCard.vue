@@ -14,6 +14,9 @@
         </li>
         <li>
             {{ production.vote_average }}
+            <!-- Add Icons using String format -->
+            <font-awesome-icon icon="fa-solid fa-star"></font-awesome-icon>
+
         </li>
     </ul>
 </template>
@@ -37,6 +40,13 @@ export default {
         },
         flagSource(){
             return require(`../assets/img/${this.production.original_language}.png`)
+        },
+        roundedUpVote(){
+            let vote = this.production.vote_average;
+
+            if(vote < 1 ) vote = 1;
+
+            return Math.ceil(vote / 2);
         }
     }
 
