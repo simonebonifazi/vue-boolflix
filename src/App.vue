@@ -4,12 +4,12 @@
     <!-- film section -->
     <section id="movies">
       <h3>Films</h3>
-      <ProductionCard v-for="movie in movies" :key="movie.id" :production="movie" />  
+      <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />  
     </section>
     <!-- series section -->
     <section id="series">
       <h3>Series</h3>
-      <ProductionCard v-for="serie in series" :key="serie.id" :production="serie" />
+      <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
     </section>
   </div>
 </template>
@@ -18,12 +18,12 @@
 
 import axios from 'axios'
 import SearchBar from './components/SearchBar.vue'
-import ProductionCard from './components/ProductionCard.vue'
+import CoverCard from './components/CoverCard.vue'
 export default {
   name: 'Bool-Flix',
   components: {
     SearchBar,
-    ProductionCard,
+    CoverCard,
 },
 data(){
   return{

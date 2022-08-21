@@ -21,7 +21,7 @@
 <script>
 // https://image.thdb.org/ w342
 export default {
-    name: 'ProductionCard',
+    name: 'CoverCard',
     props:{
         production: Object,
     },
