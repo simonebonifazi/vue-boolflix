@@ -36,20 +36,15 @@ data(){
    }     
   }
 },
+
 methods:{
   startSearch(query){
-
-//check the query
+//check
     if(!query){
       this.movies= this.series= [];
       return
-    }
-    
-
-    //api's calls
-
+    } 
     const {language, key} = this.api;
-
     const config = {
       params: {
         api_key: key,
@@ -62,6 +57,7 @@ methods:{
     this.fetchData('/search/tv', config, 'series');
 
   },
+  
   fetchData(endpoint, config, target){
     axios.get(`${this.api.baseUri}${endpoint}`, config)
       .then((res) => {

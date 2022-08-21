@@ -19,6 +19,7 @@
 </template>
 
 <script>
+// https://image.thdb.org/ w342
 export default {
     name: 'ProductionCard',
     props:{
