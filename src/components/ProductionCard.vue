@@ -7,7 +7,10 @@
             {{ production.original_title || production.original_name }}
         </li>
         <li>
-            {{ production.original_language }}
+            <img v-if="hasFlag" :src="flagSource" :alt="production.original_language">
+            <span v-else>
+                {{ production.original_language }}
+            </span>
         </li>
         <li>
             {{ production.vote_average }}
@@ -21,6 +24,15 @@ export default {
     props:{
         production: Object,
     },
+    computed:{
+        hasFlag(){
+            const flags = ['it', 'en' , 'fr' , 'es'];
+            return flags.includes(this.production.original_language)
+        },
+        flagSource(){
+            return require(`../assets/img/${this.production.original_language}.png`)
+        }
+    }
 
 };
 </script>
