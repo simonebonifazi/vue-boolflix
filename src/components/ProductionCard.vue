@@ -10,7 +10,7 @@
             {{ production.original_language }}
         </li>
         <li>
-            {{ production.vote_avarage }}
+            {{ production.vote_average }}
         </li>
     </ul>
 </template>

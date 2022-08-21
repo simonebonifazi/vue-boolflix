@@ -1,46 +1,15 @@
 <template>
   <div>
     <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="startSearch" />
-    <ProductionCard v-for="movie in movies" :key="movie.id" :production="movie" />
     <!-- film section -->
     <section id="movies">
       <h3>Films</h3>
-      <!-- <ul>
-        <li>
-          {{movie.title}}
-        </li>
-        <li>
-          {{movie.original_title}}
-        </li>
-        <li>
-          {{movie.original_language}}
-        </li>
-        <li>
-          {{movie.vote_avarage}}
-        </li>
-      </ul> -->
+      <ProductionCard v-for="movie in movies" :key="movie.id" :production="movie" />  
     </section>
     <!-- series section -->
     <section id="series">
       <h3>Series</h3>
       <ProductionCard v-for="serie in series" :key="serie.id" :production="serie" />
-        <!-- <li>
-          {{serie.name}}
-        </li>
-        <li>
-
-          {{serie.original_name}}
-        </li>
-        <li>
-
-          {{serie.original_language}}
-        </li>
-        <li>
-
-          {{serie.vote_avarage}}
-        </li> -->
-
-    
     </section>
   </div>
 </template>
