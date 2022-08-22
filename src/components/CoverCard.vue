@@ -1,21 +1,33 @@
 <template>
-    <ul>
-        <li>
-            {{ production.title || production.name }}
-        </li>
-        <li>
-            {{ production.original_title || production.original_name }}
-        </li>
-        <li>
-            <img v-if="hasFlag" :src="`${UriImg}${production.poster_path}`" :alt="production.original_language">
+    <div class="card-cover">
+        <!-- card cover -->
+        <img :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
+        <!-- card description -->
+        <div class="card-description">
+            <!-- title -->
+            <h3>
+                {{title}}
+            </h3>
+            <!-- original title -->
+                <span>
+                    Titolo originale:
+                </span>
+            <span>
+                {{originalTitle}}
+            </span>
+            <!-- language -->
+            <div>
+                Lingua:
+                <img v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
+                :alt="production.original_language">
             <span v-else>
                 {{ production.original_language }}
             </span>
-        </li>
-        <li>
-            <StarsRate :vote="production.vote_average"/> 
-        </li>
-    </ul>
+            </div>
+            <!-- vote -->
+            <StarsRate :vote="production.vote_average" />
+        </div>
+    </div>
 </template>
 
 <script>
@@ -32,6 +44,12 @@ export default {
         };
     },
     computed:{
+        title() {
+            return this.production.title || this.production.name;
+        },
+        originalTitle() {
+            return this.production.original_title || this.production.original_name;
+        },
         hasFlag(){
             const flags = ['it', 'en' , 'fr' , 'es'];
             return flags.includes(this.production.original_language)
@@ -45,6 +63,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.card-description img{
+max-width: 35px;
+}
 </style>
