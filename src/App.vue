@@ -1,10 +1,10 @@
 <template>
   <div>
-    <SearchBar placeholder="Inserisci il titolo che vuoi cercare..." @search="startSearch" />
+    <BaseHeader placeholder="Inserisci il titolo che vuoi cercare..." @start-search="startSearch" />
     <!-- film section -->
     <section id="movies">
       <h3>Films</h3>
-      <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />  
+      <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
     </section>
     <!-- series section -->
     <section id="series">
@@ -17,13 +17,13 @@
 <script>
 
 import axios from 'axios'
-import SearchBar from './components/SearchBar.vue'
 import CoverCard from './components/CoverCard.vue'
+import BaseHeader from './components/BaseHeader.vue'
 export default {
   name: 'Bool-Flix',
   components: {
-    SearchBar,
     CoverCard,
+    BaseHeader
 },
 data(){
   return{
