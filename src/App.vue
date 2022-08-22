@@ -1,17 +1,8 @@
 <template>
   <div>
     <BaseHeader placeholder="Inserisci il titolo che vuoi cercare..." @start-search="startSearch" />
-    <!-- film section -->
     <MainSection :movies="movies" :series="series" />
-    <!-- <section id="movies">
-      <h3>Films</h3>
-      <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
-    </section> -->
-    <!-- series section -->
-    <!-- <section id="series">
-      <h3>Series</h3>
-      <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
-    </section> -->
+    
   </div>
 </template>
 
