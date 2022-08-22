@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons'
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 
-library.add(faStarSolid);
-library.add(faStarRegular);
+library.add(faStarSolid, faStarRegular);
 
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 
