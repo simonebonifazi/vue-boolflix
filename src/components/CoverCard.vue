@@ -20,7 +20,7 @@
             <!-- language -->
             <div class="py-2">
                 Lingua:
-                <img class="py-2" v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
+                <img v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
                     :alt="production.original_language">
                 <span class="py-2" v-else>
                     {{ production.original_language }}
