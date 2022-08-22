@@ -2,7 +2,7 @@
   <header class="bg-black">
     <div class="container h-100 py-2">
         <div id="navbar" class="h-100 d-flex justify-content-between align-items-center">
-         <h1 class="text-danger"> BoolFlix</h1>
+         <h1 class="text-danger"> BOOLFLIX</h1>
          <div class="d-flex justify-content-center aling-items-center">
             <SearchBar @search="startSearch" />
          </div>   
