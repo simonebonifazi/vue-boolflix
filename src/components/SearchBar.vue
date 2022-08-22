@@ -24,16 +24,11 @@ props:{
 },
 data(){
     return{
-        term: ""
+        term: "",
     }
 }
 }
 </script>
 
 <style lang="scss" scoped>
-button{
-    height: 100%;
-    width: 60px;
-    border-radius: 5px;
-}
 </style>

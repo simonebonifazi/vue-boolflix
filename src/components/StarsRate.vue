@@ -25,6 +25,10 @@ methods:{
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+@import "../assets/sass/vars";
+svg{
+    color: $stars_color;
+}
 </style>
+

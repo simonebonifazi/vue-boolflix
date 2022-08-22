@@ -65,17 +65,11 @@ methods:{
 <style lang="scss">
 
 
-
+@import "./assets/sass/style.scss";
 @import "~bootstrap/scss/bootstrap";
-// reset
-*{
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
-}
 
 body{
-  background-color: #494444;
+  background-color: $main_bg
 }
 
 </style>

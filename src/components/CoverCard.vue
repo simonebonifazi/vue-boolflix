@@ -1,9 +1,9 @@
 <template>
     <div class="card-cover ">
         <!-- card cover -->
-        <img class="cover pe-4 " v-if="production.poster_path === null" src="../assets/img/preview-not-find.png"
+        <img class="cover me-4 " v-if="production.poster_path === null" src="../assets/img/placeholder-video.png"
             alt="unavaible-poster">
-        <img class="cover pe-4" v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
+        <img class="cover me-4" v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
         <!-- card description -->
         <div class="card-description text-center">
             <!-- title -->
@@ -73,24 +73,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+
 .card-description img{
 max-width: 35px;
 height: 20px;
 }
 
 .card-cover>img{
-    max-width: 342px;
+    width: 304px;
+    height: 420px;
 }
 
 .card-cover{
     position: relative;
     .cover{
         object-fit: cover;
-        transition: opacity 0.3s;
+        transition: opacity 0.5s;
     }
     &:hover{
         .cover{
-            opacity: 0.1;
+            opacity: 0.05;
         }
         .card-description{
             opacity: 1;
@@ -104,7 +107,7 @@ height: 20px;
         left:0;
         right:0;
 
-        padding: 8px;
+        padding: 24px;
 
         overflow: auto;
 
