@@ -7,7 +7,7 @@
         <!-- card description -->
         <div class="card-description text-center">
             <!-- title -->
-            <h5 >
+            <h5>
                 {{title}}
             </h5>
             <!-- original title -->
@@ -28,6 +28,13 @@
             </div>
             <!-- vote -->
             <StarsRate :vote="production.vote_average" />
+            <!-- overview -->
+            <div v-if="production.overview">
+                Overview: {{production.overview }}
+            </div>
+            <div v-else>
+                Overview: Not Found
+            </div>
         </div>
     </div>
 </template>

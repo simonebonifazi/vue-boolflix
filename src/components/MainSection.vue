@@ -8,7 +8,7 @@
             </div>
         </section>
         <section class="mb-3" id="series">
-            <h2>Serie TV</h2>
+            <h2 class="my-3">Serie TV</h2>
             <div class="d-flex">
 
                 <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />

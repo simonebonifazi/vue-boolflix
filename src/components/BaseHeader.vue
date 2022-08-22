@@ -34,5 +34,7 @@ header{
   right: 0;
 
   height: 80px;
+
+  z-index: 1;
 }
 </style>
