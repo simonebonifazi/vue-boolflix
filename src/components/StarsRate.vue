@@ -1,7 +1,7 @@
 <template>
     <div>
         Voto:
-        
+        <!-- <font-awesome-icon icon="fas fa-star" v-for="star in roundedUpVote" :key="star" /> -->
         <i class="fa-solid fa-star" v-for="star in roundedUpVote" :key="star"></i>
     </div>
 </template>
