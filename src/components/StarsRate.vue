@@ -19,7 +19,7 @@ computed: {
 methods:{
     renderStar(n){
         const iconType = this.vote >= n ? "fa-solid" : "fa-regular";
-        return iconType + "fa-star"
+        return iconType + " fa-star"
     }
 }
 }
