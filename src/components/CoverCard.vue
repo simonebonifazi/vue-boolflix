@@ -5,11 +5,11 @@
             alt="unavaible-poster">
         <img class="cover pe-4" v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
         <!-- card description -->
-        <div class="card-description">
+        <div class="card-description text-center">
             <!-- title -->
-            <h3>
+            <h5 >
                 {{title}}
-            </h3>
+            </h5>
             <!-- original title -->
             <span>
                 Titolo originale:
@@ -76,10 +76,32 @@ height: 20px;
 }
 
 .card-cover{
-   // position: relative;
+    position: relative;
     .cover{
         object-fit: cover;
         transition: opacity 0.3s;
+    }
+    &:hover{
+        .cover{
+            opacity: 0.1;
+        }
+        .card-description{
+            opacity: 1;
+        }
+    }
+
+    .card-description{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+
+        padding: 8px;
+
+        overflow: auto;
+
+        opacity: 0;
     }
 }
 
