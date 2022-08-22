@@ -2,13 +2,13 @@
     <main>
         <section id="films">
             <div>
-                <h2> Movies</h2>
+                <h2> Film</h2>
             </div>
             <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
         </section>
         <section id="series">
             <div>
-                <h2>Series</h2>
+                <h2>Serie TV</h2>
             </div>
             <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
         </section>
@@ -29,6 +29,9 @@ series: Array
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+main{
+    
+    padding-top: 80px;
+}
 </style>

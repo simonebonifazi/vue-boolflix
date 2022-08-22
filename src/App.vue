@@ -65,6 +65,7 @@ methods:{
 <style lang="scss">
 
 
+
 @import "~bootstrap/scss/bootstrap";
 // reset
 *{
@@ -73,6 +74,8 @@ methods:{
   padding:0;
 }
 
-
+body{
+  background-color: #494444;
+}
 
 </style>

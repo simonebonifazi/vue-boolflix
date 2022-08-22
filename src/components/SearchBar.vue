@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <input type="text" :placeholder="placeholder" v-model.trim="term">
-        <button type="button" @click="$emit('search', term)">
+    <div class="d-flex align-items-center">
+        <input type="text" :placeholder="placeholder" v-model.trim="term" class="form-control rounded mx-2">
+        <button type="button" class="btn btn-outline-danger rounded" @click="$emit('search', term)">
+            Cerca
         </button>
     </div>
 </template>
@@ -13,12 +14,12 @@ props:{
     placeholder: {
         type: String,
         required: false,
-        default: "Cerca"
+        default: "Cerca tra film e serie tv..."
     },
     buttonText: {
         type: String,
         required:false,
-        default: "cerca"
+        default: "Cerca"
     }
 },
 data(){
@@ -29,6 +30,10 @@ data(){
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+button{
+    height: 100%;
+    width: 60px;
+    border-radius: 5px;
+}
 </style>
