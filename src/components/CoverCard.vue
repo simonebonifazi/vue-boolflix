@@ -67,6 +67,7 @@ export default {
 <style scoped lang="scss">
 .card-description img{
 max-width: 35px;
+height: 20px;
 }
 
 .card-cover>img{

@@ -2,28 +2,29 @@
   <div>
     <BaseHeader placeholder="Inserisci il titolo che vuoi cercare..." @start-search="startSearch" />
     <!-- film section -->
-    <section id="movies">
+    <MainSection :movies="movies" :series="series" />
+    <!-- <section id="movies">
       <h3>Films</h3>
       <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
-    </section>
+    </section> -->
     <!-- series section -->
-    <section id="series">
+    <!-- <section id="series">
       <h3>Series</h3>
       <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
 
 import axios from 'axios'
-import CoverCard from './components/CoverCard.vue'
 import BaseHeader from './components/BaseHeader.vue'
+import MainSection from './components/MainSection.vue'
 export default {
   name: 'Bool-Flix',
   components: {
-    CoverCard,
-    BaseHeader
+    BaseHeader,
+    MainSection
 },
 data(){
   return{
