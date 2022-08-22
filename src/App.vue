@@ -64,7 +64,6 @@ methods:{
 
 <style lang="scss">
 
-
 @import "./assets/sass/style.scss";
 @import "~bootstrap/scss/bootstrap";
 
