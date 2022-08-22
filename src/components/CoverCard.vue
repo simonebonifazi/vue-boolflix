@@ -11,28 +11,28 @@
                 {{title}}
             </h5>
             <!-- original title -->
-            <span>
+            <span class="py-2">
                 Titolo originale:
             </span>
-            <span>
+            <span class="py-2">
                 {{originalTitle}}
             </span>
             <!-- language -->
-            <div>
+            <div class="py-2">
                 Lingua:
-                <img v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
+                <img class="py-2" v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
                     :alt="production.original_language">
-                <span v-else>
+                <span class="py-2" v-else>
                     {{ production.original_language }}
                 </span>
             </div>
             <!-- vote -->
-            <StarsRate :vote="production.vote_average" />
+            <StarsRate class="py-2" :vote="production.vote_average" />
             <!-- overview -->
-            <div v-if="production.overview">
+            <div class="py-2" v-if="production.overview">
                 Overview: {{production.overview }}
             </div>
-            <div v-else>
+            <div class="py-2" v-else>
                 Overview: Not Found
             </div>
         </div>
