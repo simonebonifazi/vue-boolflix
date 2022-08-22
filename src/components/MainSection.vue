@@ -1,16 +1,18 @@
 <template>
-    <main>
+    <main class="container">
         <section id="films">
-            <div>
-                <h2> Film</h2>
+            <h2 class="mb-3"> Film</h2>
+            <div class="d-flex">
+
+                <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
             </div>
-            <CoverCard v-for="movie in movies" :key="movie.id" :production="movie" />
         </section>
-        <section id="series">
-            <div>
-                <h2>Serie TV</h2>
+        <section class="mb-3" id="series">
+            <h2>Serie TV</h2>
+            <div class="d-flex">
+
+                <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
             </div>
-            <CoverCard v-for="serie in series" :key="serie.id" :production="serie" />
         </section>
     </main>
 </template>
@@ -32,6 +34,7 @@ series: Array
 <style lang="scss" scoped>
 main{
     
-    padding-top: 80px;
+    padding-top: 100px;
+    
 }
 </style>

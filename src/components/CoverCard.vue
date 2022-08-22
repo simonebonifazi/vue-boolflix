@@ -1,8 +1,9 @@
 <template>
-    <div class="card-cover">
+    <div class="card-cover ">
         <!-- card cover -->
-        <img v-if="production.poster_path === null" src="../assets/img/preview-not-find.png" alt="unavaible-poster">
-        <img v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
+        <img class="cover pe-4 " v-if="production.poster_path === null" src="../assets/img/preview-not-find.png"
+            alt="unavaible-poster">
+        <img class="cover pe-4" v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
         <!-- card description -->
         <div class="card-description">
             <!-- title -->
@@ -10,9 +11,9 @@
                 {{title}}
             </h3>
             <!-- original title -->
-                <span>
-                    Titolo originale:
-                </span>
+            <span>
+                Titolo originale:
+            </span>
             <span>
                 {{originalTitle}}
             </span>
@@ -20,10 +21,10 @@
             <div>
                 Lingua:
                 <img v-if="hasFlag" :src="require(`./../assets/img/${production.original_language}.png`)"
-                :alt="production.original_language">
-            <span v-else>
-                {{ production.original_language }}
-            </span>
+                    :alt="production.original_language">
+                <span v-else>
+                    {{ production.original_language }}
+                </span>
             </div>
             <!-- vote -->
             <StarsRate :vote="production.vote_average" />
@@ -72,6 +73,14 @@ height: 20px;
 
 .card-cover>img{
     max-width: 342px;
+}
+
+.card-cover{
+   // position: relative;
+    .cover{
+        object-fit: cover;
+        transition: opacity 0.3s;
+    }
 }
 
 </style>
