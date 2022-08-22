@@ -1,7 +1,8 @@
 <template>
     <div class="card-cover">
         <!-- card cover -->
-        <img :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
+        <img v-if="production.poster_path === null" src="../assets/img/preview-not-find.png" alt="unavaible-poster">
+        <img v-else :src="`${UriImg}${production.poster_path}`" :alt="originalTitle">
         <!-- card description -->
         <div class="card-description">
             <!-- title -->
@@ -67,4 +68,9 @@ export default {
 .card-description img{
 max-width: 35px;
 }
+
+.card-cover>img{
+    max-width: 342px;
+}
+
 </style>
